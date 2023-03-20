@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <style>
+      .bg-video {
+    position: fixed;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -10;
+}
+      </style>
+   <title>Document</title>
+</head>
+<body>
+<img src="./logo.svg" alt="">
+   <video class='bg-video' controls width="250">
+      <source src="./cinamon.mp4" autoplay="autoplay" muted loop >
+      </video>
+
+</body>
+<script>
+   const video = document.querySelector('.bg-video');
+   const videoSrc = video.getAttribute('src');
+   video.removeAttribute('controls');
+   video.setAttribute('autoplay', 'true');
+   video.setAttribute('loop', 'true');
+</script>
+</html>
