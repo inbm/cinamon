@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <style>
-      .bg-video {
+	<style>
+		.bg-video {
 			position: fixed;
 			overflow: hidden;
 			top: 50%;
@@ -17,18 +17,160 @@
 			height: auto;
 			transform: translateX(-50%) translateY(-50%);
 			z-index: -10;
-}
-      </style>
-   <title>Document</title>c 
+		}
+		.round-button{
+			border: 1px solid white;
+			border-radius: 35px;
+
+			background-color: transparent;
+			color: white;
+			width: 120px;
+			padding: 13px 15px;
+
+			font-size: 18px;
+			font-weight: 500;
+		}
+
+		.circle-button{
+			border: 1px solid white;
+			border-radius: 50%;
+
+			background-color: transparent;
+			color: white;
+			width: 35px;
+			height: 35px;
+
+			margin: 5px 4px;
+			
+		}
+
+		.conainer{
+			display: flex;
+			flex-direction: column;
+
+		}
+
+		.box{
+			display: flex;
+		}
+
+		.head{
+			justify-content: space-between;
+		}
+		.logo{
+			/* margin: 10px; */
+			position: fixed;
+			top: 40px;
+			left: 40px;
+		}
+		.menu{
+			position: fixed;
+			top: 25px;
+			right: 15px;
+		}
+
+		.center{
+			position: fixed;
+			left: 50%;
+			top: 40%;
+			transform: translate(-50%, -50%);
+		}
+
+		.synergy{
+			position: fixed;
+			left: 50%;
+			top: 40%;
+			transform: translate(-50%, -50%);
+		}
+
+		.main-button{
+			position: fixed;
+			left: 50%;
+			top: 70%;
+			transform: translate(-50%, -50%);
+		}
+
+		.content-text{
+			position: fixed;
+			left: 50%;
+			top: calc(50% + 15px);
+			transform: translate(-50%, -50%);
+
+			font-size: 15px;
+			
+		}
+
+		.footer-text{
+			position: fixed;
+			bottom: 25px;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			font-size: 10px;
+		}
+
+		.footer-buttons{
+			position: fixed;
+			bottom: 0;
+			right: 10px;
+			transform: translate(-50%, -50%);
+
+			display: flex;
+		}
+
+		.text{
+			color: white;
+		}
+
+  </style>
+   <title>Document</title>
 </head>
 <body>
-<img src="./logo.svg" alt="">
-<img src="./center.svg">
-<img src="./synergy.svg">
+	
+	
 
-   <video class='bg-video' controls width="250">
-      <source src="./cinamon.mp4" autoplay="autoplay" muted loop >
-      </video>
+	<div class="conainer">
+		<div class="head box">
+			<div class="logo">
+				<img src="./logo.svg" alt="">
+			</div>
+			<div  class="menu">
+				<button class="round-button">menu</button>
+			</div>
+		</div>
+		<div class="content box">
+			<div class="center">
+				<img src="./center.svg">
+			</div>
+			<div class="synergy">
+				<img src="./synergy.svg">
+			</div>
+			<div>
+				<button class="round-button main-button">Company</button>
+			</div>
+
+			<div class="content-text text">
+				비지니스에 성공 시너지를 뿌리세요 CINAMON
+			</div>
+		</div>
+		<div class="footer box">
+			<div  class="footer-text text">
+				cinamon (주)씨나몬 서울특별시 송파구 법원로 128, B동7층701호 cinamon@cinamon.co.kr 사업자번호 601-86-01825 COPYRIGHTc2022 cinamon. ALL RIGHTS RESERVED.
+			</div>
+			<div class="footer-buttons">
+				<button class="circle-button">a</button>
+				<button class="circle-button">b</button>
+				<button class="circle-button">c</button>
+
+			</div>
+
+		</div>
+
+	</div>
+
+		<video class='bg-video' controls width="250">
+			<source src="./cinamon.mp4" autoplay="autoplay" muted loop >
+		</video>
 
 </body>
 <script>
