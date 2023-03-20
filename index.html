@@ -168,8 +168,8 @@
 
 	</div>
 
-		<video class='bg-video' controls width="250">
-			<source src="./cinamon.mp4" autoplay="autoplay" muted loop >
+		<video class='bg-video' controls width="250" autoplay="autoplay" muted loop>
+			<source src="./cinamon.mp4"  >
 		</video>
 
 </body>
@@ -182,7 +182,31 @@
 		
 		video.setAttribute('autoplay', 'true');
 		video.setAttribute('loop', 'true');
-		video.play();
+		video.setAttribute('muted', 'true');
+		const promise = video.play();
+		console.log(promise);
+		if (promise !== undefined) {
+			promise.then((result) => {
+				
+				if(!result){
+					const promise2 = video.play();
+					console.log("promise2", promise2);
+				}
+				// Autoplay started!
+			}).catch(error => {
+				const promise2 = video.play();
+				console.log("promise2", promise2);
+				// Autoplay was prevented.
+				// Show a "Play" button so that user can start playback.
+			});
+		}
+		
+
+		// setTimeout(() => {
+		// 	const promise = video.play();
+		// 	console.log(promise); 
+		// },
+		// 2000)
 	})
    
 </script>
