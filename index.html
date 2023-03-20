@@ -174,10 +174,16 @@
 
 </body>
 <script>
-   const video = document.querySelector('.bg-video');
-   const videoSrc = video.getAttribute('src');
-   video.removeAttribute('controls');
-   video.setAttribute('autoplay', 'true');
-   video.setAttribute('loop', 'true');
+
+	window.addEventListener("load", ()=>{
+		const video = document.querySelector('.bg-video');
+		const videoSrc = video.getAttribute('src');
+		video.removeAttribute('controls');
+		
+		video.setAttribute('autoplay', 'true');
+		video.setAttribute('loop', 'true');
+		video.play();
+	})
+   
 </script>
 </html>
