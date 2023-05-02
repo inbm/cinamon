@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<style>
+		body{
+
+		}
 		.bg-video {
 			position: fixed;
 			overflow: hidden;
@@ -85,7 +88,9 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 
+			
 			font-size: 10px;
+			white-space: nowrap;
 		}
 
 		.footer-buttons{
@@ -133,6 +138,64 @@
 		}
  
 
+		/* mobile media query */
+		@media (max-width: 920px) {
+			/* 가로 세로 막기 */
+			@media( orientation: landscape ){
+				html {
+					transform: rotate(-90deg);
+					transform-origin: top left;
+					position: absolute;
+					top: 100%;
+					left: 0;
+					width: 100vh;
+					height: 100vw;
+				}
+			}
+
+			/* video 줄임에 따른 배경 처리 */
+			body{
+				background-color: rgb(62, 38, 217);
+			}
+			.bg-video {
+				max-width: 800px;
+				top: 38%;
+			}
+
+
+			.content{
+				top: 50%
+			}
+
+			.logo-big img{
+				width: 200px;
+			}
+
+			.content-text{
+				font-size: 18px;
+				white-space: nowrap;
+			}
+
+			a{
+				color: white;
+				text-decoration: none;
+			}
+
+			.footer-text{
+				white-space: inherit;
+				display: -webkit-box;
+				overflow: hidden;
+
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp : 3;
+			}
+
+			
+
+
+		}
+
+
   </style>
    <title>씨나몬 - 성공을 부르는 솔루션</title>
 </head>
@@ -164,7 +227,7 @@
 
 		<div class="footer box">
 			<div  class="footer-text text">
-				cinamon (주)씨나몬 서울특별시 송파구 법원로 128, B동7층701호 cinamon@cinamon.co.kr 사업자번호 601-86-01825 COPYRIGHTc2022 cinamon. ALL RIGHTS RESERVED.
+				(주)씨나몬 서울특별시 중구 동일로 86, 8층 812호
 			</div>
 			<div class="footer-buttons">
 				<div class="pointer" onclick="window.open('https://m.blog.naver.com/cinamon2020')" >
@@ -187,7 +250,7 @@
 </body>
 
 <script>
-
+// 페이지 로드 시에 호출
 	window.addEventListener("load", ()=>{
 		const video = document.querySelector('.bg-video');
 		const videoSrc = video.getAttribute('src');
@@ -214,5 +277,11 @@
 		
 	})
    
+	window.addEventListener("mousewheel", (e) => {
+		const delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
+		console.log("scroll event", e, delta);
+
+	})
+	
 </script>
 </html>
